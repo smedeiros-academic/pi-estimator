@@ -1,6 +1,6 @@
 ## pi.py
 
-try this command:
+try these commands:
 
 ```
 docker build -t test ./
