@@ -3,5 +3,7 @@
 try this command:
 
 ```
-docker run --rm wjallen/pi-estimator:0.1  pi.py 1000
+docker build -t test ./
+docker run --rm test pi.py 1000000
+docker run --rm test pytest
 ```

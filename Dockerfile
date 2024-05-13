@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM python:3.9
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y python3
+RUN pip install pytest
 
-COPY pi.py /code/pi.py
+WORKDIR /code
+COPY pi.py test_pi.py ./
 
-RUN chmod +x /code/pi.py
+RUN chmod +x pi.py
+ENV PATH="/code:$PATH"
 
-ENV PATH "/code:$PATH"
-
-CMD ["pi.py", "-h"]
+CMD ["python3", pi.py", "-h"]
